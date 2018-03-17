@@ -10,3 +10,6 @@ Basic functionality for deleting tasks from the task list by clicking an icon.
 
 ## Modifications date
 Reference for date of modifications; may be deleted upon app completion
+
+## Task deletion functionality
+Functionality for clearing all tasks from list
