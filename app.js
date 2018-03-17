@@ -12,6 +12,8 @@ loadEventListeners();
 function loadEventListeners() {
   // Add task event listener to form
   form.addEventListener('submit', addTask);
+  // Remove task event listener (added to tasklist)
+  taskList.addEventListener('click', removeTask);
 }
 
 function addTask(e) {
@@ -20,16 +22,22 @@ function addTask(e) {
   }
   // Create li element
   const li = document.createElement('li');
-  // Add class to new element
+
+  // Add class to new li element
   li.className = 'collection-item';
-  // Create text node and append to li
+
+  // Create text node and append to new li element
   li.appendChild(document.createTextNode(taskInput.value));
+
   // Create new link element
   const link = document.createElement('a');
-  // Add class to link element
-  link.className = 'delete-item secondary-content';
+
+  // Add class to new link element
+  link.className = 'delete-item secondary-content'; // secondary-content for Materialize
+
   // Add icon html
   link.innerHTML = '<i class ="fa fa-remove"></i>';
+
   // Append link to li
   li.appendChild(link);
 
@@ -39,5 +47,18 @@ function addTask(e) {
   // Clear input
   taskInput.value = '';
 
+  // Prevent Default event behavior
   e.preventDefault();
+}
+
+// Remove task function
+//  e.target will be the icon
+//   its parent element is the link, which contains the delete-item class
+//   so to remove the li item itself, its parent (the li) must be retrieved
+function removeTask(e) {
+  if(e.target.parentElement.classList.contains('delete-item')) {
+    // this gets the parent li element itself
+    e.target.parentElement.parentElement.remove();
+  }
+
 }
