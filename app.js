@@ -16,10 +16,11 @@ function loadEventListeners() {
   taskList.addEventListener('click', removeTask);
 }
 
-// ADD TASK FUNCTION
+// addTask FUNCTION
 function addTask(e) {
+  // if the button is clicked but the input field is blank
   if(taskInput.value === '') {
-    alert('Please add a task in the input field!');
+    alert('Please enter a task!');
   }
   // Create li element
   const li = document.createElement('li');
@@ -52,7 +53,7 @@ function addTask(e) {
   e.preventDefault();
 }  // End addTask function
 
-// REMOVE TASK FUNCTION
+// removeTask FUNCTION
 //  e.target will be the icon
 //   its parent element is the link, which contains the delete-item class
 //   so to remove the li item itself, its parent (the li) must be retrieved
@@ -64,3 +65,8 @@ function removeTask(e) {
     } 
   }
 } // end removeTask function
+
+// Reference for modifications only -- may be deleted
+const modifiedDate = document.lastModified;
+const footer = document.querySelector('footer');
+footer.appendChild(document.createTextNode(modifiedDate));
