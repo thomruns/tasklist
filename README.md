@@ -16,3 +16,6 @@ Functionality for clearing all tasks from list
 
 ## Task filter functionality
 Functionality for filtering the task list
+
+## Local storage functionality
+Persist tasks in local storage, delete and clear tasks from local storage

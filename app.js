@@ -10,6 +10,8 @@ loadEventListeners();
 
 // loadEventListeners functionality
 function loadEventListeners() {
+  // DOM load event
+  document.addEventListener('DOMContentLoaded', getTasks);
   // Add task event listener to form
   form.addEventListener('submit', addTask);
   // Remove task event listener (added to tasklist)
@@ -19,6 +21,41 @@ function loadEventListeners() {
   // Filter tasks event
   filter.addEventListener('keyup', filterTasks);
 }
+
+// getTasks from local storage FUNCTION (on load event)
+function getTasks() {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.forEach(function(task){
+    // Create li element
+    const li = document.createElement('li');
+
+    // Add class to new li element
+    li.className = 'collection-item';
+
+    // Create text node and append to new li element
+    li.appendChild(document.createTextNode(task));
+
+    // Create new link element
+    const link = document.createElement('a');
+
+    // Add class to new link element
+    link.className = 'delete-item secondary-content'; // secondary-content for Materialize
+
+    // Add icon html
+    link.innerHTML = '<i class ="fa fa-remove"></i>';
+
+    // Append link to li
+    li.appendChild(link);
+
+    // Append li to ul
+    taskList.appendChild(li);
+  });
+} // end getTasks function
 
 // addTask FUNCTION
 function addTask(e) {
@@ -50,12 +87,28 @@ function addTask(e) {
   // Append li to ul
   taskList.appendChild(li);
 
+  // Store in local storage function call
+  storeTaskInLocalStorage(taskInput.value);
+
   // Clear input
   taskInput.value = '';
 
   // Prevent Default event behavior
   e.preventDefault();
 }  // End addTask function
+
+// store task in local storage functionality
+function storeTaskInLocalStorage(task) {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  console.log(task);
+}
 
 // removeTask FUNCTION
 //  e.target will be the icon
@@ -66,9 +119,28 @@ function removeTask(e) {
     if(confirm('Are you sure?')) {
       // this gets the parent li element itself
       e.target.parentElement.parentElement.remove();
+
+      // Remove from local storage
+      removeTaskFromLocalStorage(e.target.parentElement.parentElement);
     } 
   }
 } // end removeTask function
+
+function removeTaskFromLocalStorage(taskItem) {
+  let tasks;
+  if(localStorage.getItem('tasks') === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem('tasks'));
+  }
+
+  tasks.forEach(function(task, index) {
+    if(taskItem.textContent === task) {
+      tasks.splice(index, 1);
+    }
+  });
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
 // clearTasks function
 function clearTasks() {
@@ -79,7 +151,15 @@ function clearTasks() {
   while(taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
+
+  // clear from local storage
+  clearTasksFromLocalStorage();
+
 } // end clearTasks function
+
+function clearTasksFromLocalStorage() {
+  localStorage.clear();
+}
 
 // filterTasks function
 function filterTasks(e) {
@@ -94,6 +174,8 @@ function filterTasks(e) {
     }
   });
 } // end filterTasks function
+
+
 
 // Reference for modifications only -- may be deleted
 const modifiedDate = document.lastModified;
