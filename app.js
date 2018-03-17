@@ -107,7 +107,6 @@ function storeTaskInLocalStorage(task) {
   }
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
-  console.log(task);
 }
 
 // removeTask FUNCTION
