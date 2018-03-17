@@ -16,6 +16,7 @@ function loadEventListeners() {
   taskList.addEventListener('click', removeTask);
 }
 
+// ADD TASK FUNCTION
 function addTask(e) {
   if(taskInput.value === '') {
     alert('Please add a task in the input field!');
@@ -49,16 +50,17 @@ function addTask(e) {
 
   // Prevent Default event behavior
   e.preventDefault();
-}
+}  // End addTask function
 
-// Remove task function
+// REMOVE TASK FUNCTION
 //  e.target will be the icon
 //   its parent element is the link, which contains the delete-item class
 //   so to remove the li item itself, its parent (the li) must be retrieved
 function removeTask(e) {
   if(e.target.parentElement.classList.contains('delete-item')) {
-    // this gets the parent li element itself
-    e.target.parentElement.parentElement.remove();
+    if(confirm('Are you sure?')) {
+      // this gets the parent li element itself
+      e.target.parentElement.parentElement.remove();
+    } 
   }
-
-}
+} // end removeTask function
