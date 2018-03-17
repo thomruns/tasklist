@@ -14,6 +14,8 @@ function loadEventListeners() {
   form.addEventListener('submit', addTask);
   // Remove task event listener (added to tasklist)
   taskList.addEventListener('click', removeTask);
+  // Clear task event
+  clearBtn.addEventListener('click', clearTasks);
 }
 
 // addTask FUNCTION
@@ -65,6 +67,17 @@ function removeTask(e) {
     } 
   }
 } // end removeTask function
+
+// clearTasks function
+function clearTasks() {
+  // Easy but slower
+  //taskList.innerHTML = '';
+
+  // Faster
+  while(taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild);
+  }
+}
 
 // Reference for modifications only -- may be deleted
 const modifiedDate = document.lastModified;
