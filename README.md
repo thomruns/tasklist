@@ -23,7 +23,7 @@ Basic functionality for adding tasks to a task list.
 Basic functionality for deleting individual tasks from the task list by clicking an icon.
 
 ## Modifications date
-Reference for date of modifications; may be deleted upon app completion
+For reference only; date of modifications; may be deleted upon app completion
 
 ## Task deletion functionality
 Functionality for clearing all tasks from list after confirmation

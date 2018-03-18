@@ -22,7 +22,7 @@ function loadEventListeners() {
   filter.addEventListener('keyup', filterTasks);
 }
 
-// 6b. getTasks from local storage FUNCTION (on load event)
+// 5b. getTasks from local storage FUNCTION (on load event)
 function getTasks() {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -97,7 +97,7 @@ function addTask(e) {
   e.preventDefault();
 }  // End addTask function
 
-// 6a. store task in local storage functionality
+// 5a. store task in local storage functionality
 function storeTaskInLocalStorage(task) {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -125,7 +125,7 @@ function removeTask(e) {
   }
 } // end removeTask function
 
-// 6c. Remove tasks from local storage
+// 5c. Remove tasks from local storage
 function removeTaskFromLocalStorage(taskItem) {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -142,7 +142,7 @@ function removeTaskFromLocalStorage(taskItem) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// 4. clearTasks function
+// 3. clearTasks function
 function clearTasks() {
   // Easy but slower processing
   //taskList.innerHTML = '';
@@ -161,7 +161,7 @@ function clearTasksFromLocalStorage() {
   localStorage.clear();
 } // end clearTasks functionality
 
-// 5. filterTasks function
+// 4. filterTasks function
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
 
@@ -177,7 +177,7 @@ function filterTasks(e) {
 
 
 
-//  3. Reference for modifications only -- may be deleted
+//  Reference for modifications only -- may be deleted
 const modifiedDate = document.lastModified;
 const footer = document.querySelector('footer');
 footer.appendChild(document.createTextNode(modifiedDate));
