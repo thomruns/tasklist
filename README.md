@@ -16,20 +16,20 @@ As application utilizes Materialize for styling, class names are based upon its 
 ## Define all UI variables, create event listener functionality
 A new event listener is added as each module of functionality is added.
 
-## Functionality for adding tasks
+1. Functionality for adding tasks
 Basic functionality for adding tasks to a task list.
 
-## Functionality for deleting tasks
+2. Functionality for deleting tasks
 Basic functionality for deleting individual tasks from the task list by clicking an icon.
 
 ## Modifications date
 For reference only; date of modifications; may be deleted upon app completion
 
-## Task deletion functionality
+3. Task deletion functionality
 Functionality for clearing all tasks from list after confirmation
 
-## Task filter functionality
+4. Task filter functionality
 Functionality for filtering the task list
 
-## Local storage functionality
+5. Local storage functionality
 Persist tasks in local storage, delete and clear tasks from local storage
