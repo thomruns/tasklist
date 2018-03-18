@@ -2,6 +2,14 @@
 
 Basic Tasklist App using Materialize as CSS but only vanilla Javascript (jQuery required only as a Materialize dependency).
 
+This app provides the following functionality:
+* Allows user to add tasks to a list and display the list of tasks, persisting in local storage from session to session
+* Allows user to delete individual tasks from the list after confirmation
+* Allows user to delete entire list of tasks
+* Allows user to filter tasks 
+
+The build sequence for this app follows:
+
 ## Functionality for adding tasks
 Basic functionality for adding tasks to a task list.
 
