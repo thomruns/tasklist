@@ -18,26 +18,20 @@ This app provides the following functionality:
 
   A new event listener is added as each module of functionality is added.
 
-1. Functionality for adding tasks
+1. Functionality for adding tasks  
+   Basic functionality for adding tasks to a task list.
 
-  Basic functionality for adding tasks to a task list.
+2. Functionality for deleting tasks  
+   Basic functionality for deleting individual tasks from the task list by clicking an icon.
 
-2. Functionality for deleting tasks
+* Modifications date  
+   For reference only; date of modifications; may be deleted upon app completion
 
-  Basic functionality for deleting individual tasks from the task list by clicking an icon.
+3. Task deletion functionality  
+   Functionality for clearing all tasks from list after confirmation
 
-* Modifications date
+4. Task filter functionality  
+   Functionality for filtering the task list
 
-  For reference only; date of modifications; may be deleted upon app completion
-
-3. Task deletion functionality
-
-  Functionality for clearing all tasks from list after confirmation
-
-4. Task filter functionality
-
-  Functionality for filtering the task list
-
-5. Local storage functionality
-
-  Persist tasks in local storage, delete and clear tasks from local storage
+5. Local storage functionality  
+   Persist tasks in local storage, delete and clear tasks from local storage
