@@ -144,10 +144,10 @@ function removeTaskFromLocalStorage(taskItem) {
 
 // 4. clearTasks function
 function clearTasks() {
-  // Easy but slower
+  // Easy but slower processing
   //taskList.innerHTML = '';
 
-  // Faster
+  // Faster processing
   while(taskList.firstChild) {
     taskList.removeChild(taskList.firstChild);
   }
@@ -155,12 +155,11 @@ function clearTasks() {
   // clear from local storage
   alert('Are you sure you want to delete all the tasks?');
   clearTasksFromLocalStorage();
-
-} // end clearTasks function
+} 
 
 function clearTasksFromLocalStorage() {
   localStorage.clear();
-}
+} // end clearTasks functionality
 
 // 5. filterTasks function
 function filterTasks(e) {
