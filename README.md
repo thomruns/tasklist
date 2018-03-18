@@ -10,6 +10,12 @@ This app provides the following functionality:
 
 The build sequence for this app follows:
 
+## Define UI HTML
+As application utilizes Materialize for styling, class names are based upon its API
+
+## Define all UI variables, create event listener functionality
+A new event listener is added as each module of functionality is added.
+
 ## Functionality for adding tasks
 Basic functionality for adding tasks to a task list.
 

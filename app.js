@@ -8,7 +8,7 @@ const taskInput = document.querySelector('#task'); // Task input value field hoo
 // Load all event listeners
 loadEventListeners();
 
-// loadEventListeners functionality
+// loadEventListeners all event listeners functionality
 function loadEventListeners() {
   // DOM load event
   document.addEventListener('DOMContentLoaded', getTasks);
@@ -22,7 +22,7 @@ function loadEventListeners() {
   filter.addEventListener('keyup', filterTasks);
 }
 
-// getTasks from local storage FUNCTION (on load event)
+// 6b. getTasks from local storage FUNCTION (on load event)
 function getTasks() {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -57,7 +57,7 @@ function getTasks() {
   });
 } // end getTasks function
 
-// addTask FUNCTION
+//  1. addTask FUNCTION
 function addTask(e) {
   // if the button is clicked but the input field is blank
   if(taskInput.value === '') {
@@ -97,7 +97,7 @@ function addTask(e) {
   e.preventDefault();
 }  // End addTask function
 
-// store task in local storage functionality
+// 6a. store task in local storage functionality
 function storeTaskInLocalStorage(task) {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -109,7 +109,7 @@ function storeTaskInLocalStorage(task) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// removeTask FUNCTION
+// 2. removeTask FUNCTION
 //  e.target will be the icon
 //   its parent element is the link, which contains the delete-item class
 //   so to remove the li item itself, its parent (the li) must be retrieved
@@ -125,6 +125,7 @@ function removeTask(e) {
   }
 } // end removeTask function
 
+// 6c. Remove tasks from local storage
 function removeTaskFromLocalStorage(taskItem) {
   let tasks;
   if(localStorage.getItem('tasks') === null) {
@@ -141,7 +142,7 @@ function removeTaskFromLocalStorage(taskItem) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-// clearTasks function
+// 4. clearTasks function
 function clearTasks() {
   // Easy but slower
   //taskList.innerHTML = '';
@@ -160,7 +161,7 @@ function clearTasksFromLocalStorage() {
   localStorage.clear();
 }
 
-// filterTasks function
+// 5. filterTasks function
 function filterTasks(e) {
   const text = e.target.value.toLowerCase();
 
@@ -176,7 +177,7 @@ function filterTasks(e) {
 
 
 
-// Reference for modifications only -- may be deleted
+//  3. Reference for modifications only -- may be deleted
 const modifiedDate = document.lastModified;
 const footer = document.querySelector('footer');
 footer.appendChild(document.createTextNode(modifiedDate));
