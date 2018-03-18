@@ -8,12 +8,12 @@ This app provides the following functionality:
 * Allows user to delete entire list of tasks
 * Allows user to filter tasks 
 
-The build sequence for this app follows:
+## The build sequence for this app follows:
 
-## Define UI HTML
+* Define UI HTML
 As application utilizes Materialize for styling, class names are based upon its API
 
-## Define all UI variables, create event listener functionality
+* Define all UI variables, create event listener functionality
 A new event listener is added as each module of functionality is added.
 
 1. Functionality for adding tasks
