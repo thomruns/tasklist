@@ -8,17 +8,17 @@ const taskInput = document.querySelector('#task'); // Task input value field hoo
 // Load all event listeners
 loadEventListeners();
 
-// loadEventListeners all event listeners functionality
+// loadEventListeners all event listeners functionality and build sequence
 function loadEventListeners() {
-  // DOM load event
+  // 5. DOM load event
   document.addEventListener('DOMContentLoaded', getTasks);
-  // Add task event listener to form
+  // 1. Add task event listener to form
   form.addEventListener('submit', addTask);
-  // Remove task event listener (added to tasklist)
+  // 2. Remove task event listener (added to tasklist)
   taskList.addEventListener('click', removeTask);
-  // Clear task event
+  // 3. Clear task event
   clearBtn.addEventListener('click', clearTasks);
-  // Filter tasks event
+  // 4. Filter tasks event
   filter.addEventListener('keyup', filterTasks);
 }
 
