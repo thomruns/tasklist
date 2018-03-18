@@ -26,7 +26,7 @@ Basic functionality for deleting individual tasks from the task list by clicking
 Reference for date of modifications; may be deleted upon app completion
 
 ## Task deletion functionality
-Functionality for clearing all tasks from list
+Functionality for clearing all tasks from list after confirmation
 
 ## Task filter functionality
 Functionality for filtering the task list

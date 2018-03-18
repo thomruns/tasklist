@@ -153,6 +153,7 @@ function clearTasks() {
   }
 
   // clear from local storage
+  alert('Are you sure you want to delete all the tasks?');
   clearTasksFromLocalStorage();
 
 } // end clearTasks function
